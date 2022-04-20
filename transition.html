@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="prefixfree.min.js"></script>
+    <style>
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: orange;
+
+        transition-duration: 2s;
+        /* transition 속성 종류
+
+            1. transition : 모든 transition 속성을 한번에 사용
+            2. transition-delay : 이벤트 발생후 몇초 후에 재생할지 지정
+            3. transition-duration : 몇초동안 재생할지 지정
+            4. transition-property : 어떤 속성을 변형할지 지정
+            5. transition-timing-function : 수치 변형 함수를 지정
+        
+        */
+      }
+      .box:hover {
+        width: 200px;
+        height: 300px;
+      }
+      .box:active {
+        background-color: red;
+      }
+
+      #graph {
+        width: 610px;
+        border: 3px solid black;
+      }
+      .bar {
+        width: 10px;
+        height: 50px;
+        background-color: orange;
+        margin: 5px;
+
+        /* transition-property: background-color, width;
+        transition-duration: 1s, 5s; */
+
+        transition: background-color 1s, width 5s;
+      }
+
+      #graph:hover > .bar:nth-child(1) {
+        /*transition-delay: 0s;*/
+        background-color: red;
+        width: 100px;
+      }
+      #graph:hover > .bar:nth-child(2) {
+        /* transition-delay: 1s; */
+        background-color: blue;
+        width: 300px;
+      }
+      #graph:hover > .bar:nth-child(3) {
+        /* transition-delay: 2s; */
+        background-color: green;
+        width: 400px;
+      }
+      #graph:hover > .bar:nth-child(4) {
+        /* transition-delay: 3s; */
+        background-color: yellow;
+        width: 200px;
+      }
+      #graph:hover > .bar:nth-child(5) {
+        /* transition-delay: 4s; */
+        background-color: pink;
+        width: 400px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <h1>CSS Transition graph</h1>
+    <div id="graph">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+  </body>
+</html>
